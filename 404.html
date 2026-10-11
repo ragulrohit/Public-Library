@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The page you were looking for could not be found at Stackly Public Library.">
+  <title>Page Not Found | Stackly Public Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+    .err {
+      height: 100dvh;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px 20px;
+      background:
+        radial-gradient(1000px 500px at 80% 0%, rgba(157, 122, 232, 0.3), transparent 60%),
+        radial-gradient(900px 500px at 5% 100%, rgba(245, 130, 43, 0.22), transparent 55%),
+        linear-gradient(140deg, #f7f8fc 0%, #fff7ed 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .err__inner { max-width: 620px; position: relative; z-index: 2; }
+    .err .brand__logo {
+      filter: brightness(0) saturate(100%) invert(31%) sepia(54%) saturate(1646%) hue-rotate(232deg) brightness(90%) contrast(92%);
+    }
+    .err__code {
+      font-size: clamp(6rem, 22vw, 13rem);
+      font-weight: 800;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #6c3fc5, #2b6cb0 55%, #0fb5a5);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: pop 2.6s ease-in-out infinite;
+    }
+    .err h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+    @keyframes pop { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(-1deg); } }
+  </style>
+</head>
+<body>
+  <section class="err">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <div class="err__inner">
+      <a href="index.html" class="brand" style="justify-content:center;margin-bottom:18px">
+        <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+      </a>
+
+      <div class="err__code">404</div>
+      <h1>Oops! This Page Could Not Be Found.</h1>
+      <p style="color:var(--muted);max-width:460px;margin:0 auto 28px">
+        The page you're looking for may have been moved, renamed or is temporarily unavailable.
+        Let's get you back to the shelves.
+      </p>
+
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn--ghost" id="goBackBtn" type="button"><i class="fa-solid fa-arrow-left"></i> Go Back</button>
+        <a class="btn" href="index.html"><i class="fa-solid fa-house"></i> Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("goBackBtn").addEventListener("click", function () {
+      if (window.history.length > 1 && document.referrer !== "" ) {
+        window.history.back();
+      } else if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+</body>
+</html>

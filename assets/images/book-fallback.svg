@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="266" viewBox="0 0 200 266" role="img" aria-label="Book cover placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6c3fc5"/>
+      <stop offset="0.55" stop-color="#2b6cb0"/>
+      <stop offset="1" stop-color="#0fb5a5"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="266" fill="url(#g)"/>
+  <rect x="0" y="0" width="14" height="266" fill="rgba(0,0,0,0.18)"/>
+  <g fill="#ffffff" opacity="0.95">
+    <path d="M100 96c-12-9-30-9-42-3v70c12-6 30-6 42 3 12-9 30-9 42-3V93c-12-6-30-6-42 3z" fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+    <line x1="100" y1="96" x2="100" y2="166" stroke="#ffffff" stroke-width="5"/>
+  </g>
+  <text x="100" y="210" font-family="Poppins, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffffff" text-anchor="middle">Stackly Library</text>
+</svg>

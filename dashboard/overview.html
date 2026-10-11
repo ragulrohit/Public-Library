@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Public Library member dashboard overview.">
+  <title>Overview | Stackly Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-guard>
+<div class="dash">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="dash-sidebar" id="sidebar">
+    <a href="../index.html" class="brand">
+      <img class="brand__logo" src="../images/Stackly_logo.png" alt="Stackly Public Library">
+      <button class="dash-sidebar__close" type="button" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></button>
+    </a>
+    <nav class="dash-nav" aria-label="Dashboard navigation">
+      <div class="dash-nav__label">Menu</div>
+      <a href="overview.html" class="active"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="my-books.html"><i class="fa-solid fa-book"></i> My Books</a>
+      <a href="browse-books.html"><i class="fa-solid fa-magnifying-glass"></i> Browse Books</a>
+      <a href="borrowing-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Borrowing History</a>
+      <a href="reservations.html"><i class="fa-solid fa-bookmark"></i> Reservations</a>
+      <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+      <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications <span class="pill" data-notif-count>3</span></a>
+      <a href="profile-settings.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+    </nav>
+    <div class="dash-sidebar__foot">
+      <button type="button" class="btn btn--light btn--sm btn--block" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <!-- ============ HEADER ============ -->
+    <header class="dash-header">
+      <button class="dash-header__toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+      <div class="dash-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search the library…" data-global-search aria-label="Search dashboard">
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-dropdown">
+          <button class="user-chip" data-dropdown aria-haspopup="true">
+            <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=96&name=Reader" alt="Profile avatar">
+            <div class="info"><div class="n" data-user-name>Reader</div><div class="e" data-user-email>reader@stacklylibrary.org</div></div>
+            <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:var(--muted)"></i>
+          </button>
+          <div class="dash-menu">
+            <a href="profile-settings.html"><i class="fa-solid fa-user"></i> My Profile</a>
+            <a href="my-books.html"><i class="fa-solid fa-book"></i> My Books</a>
+            <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+            <a href="../index.html"><i class="fa-solid fa-globe"></i> Public Website</a>
+            <button class="mrow" data-logout style="width:100%;text-align:left"><i class="fa-solid fa-right-from-bracket"></i><span class="t" style="color:var(--ink)">Logout</span></button>
+          </div>
+        </div>
+        <button class="icon-btn" data-logout aria-label="Logout" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </header>
+
+    <!-- ============ CONTENT ============ -->
+    <main class="dash-content">
+
+      <!-- Welcome -->
+      <section class="dash-welcome reveal">
+        <div>
+          <h1 data-user-greeting>Welcome back, Reader!</h1>
+          <p>Here's your library overview for today.</p>
+        </div>
+        <div class="chip"><i class="fa-solid fa-id-badge"></i> <span data-user-role>Member</span></div>
+      </section>
+
+      <!-- Stats -->
+      <section class="dash-stats">
+        <div class="dash-stat reveal" data-searchable>
+          <div class="dash-stat__top">
+            <div class="dash-stat__ic ic-purple"><i class="fa-solid fa-book"></i></div>
+            <span class="trend trend--up"><i class="fa-solid fa-arrow-up"></i> +8%</span>
+          </div>
+          <div class="num" data-count="126">0</div>
+          <div class="lbl">Total Books Borrowed</div>
+        </div>
+        <div class="dash-stat reveal d1" data-searchable>
+          <div class="dash-stat__top">
+            <div class="dash-stat__ic ic-teal"><i class="fa-solid fa-book-open-reader"></i></div>
+            <span class="trend trend--up"><i class="fa-solid fa-arrow-up"></i> +2</span>
+          </div>
+          <div class="num" data-count="4">0</div>
+          <div class="lbl">Currently Borrowed</div>
+        </div>
+        <div class="dash-stat reveal d2" data-searchable>
+          <div class="dash-stat__top">
+            <div class="dash-stat__ic ic-orange"><i class="fa-solid fa-bookmark"></i></div>
+            <span class="trend trend--down"><i class="fa-solid fa-arrow-down"></i> -1</span>
+          </div>
+          <div class="num" data-count="3">0</div>
+          <div class="lbl">Available Reservations</div>
+        </div>
+        <div class="dash-stat reveal d3" data-searchable>
+          <div class="dash-stat__top">
+            <div class="dash-stat__ic ic-blue"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <span class="trend trend--down"><i class="fa-solid fa-arrow-down"></i> Attention</span>
+          </div>
+          <div class="num" data-count="1">0</div>
+          <div class="lbl">Overdue Books</div>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section class="dash-cols">
+        <div class="panel reveal" data-searchable>
+          <div class="panel__head">
+            <div><h2>Monthly Reading Activity</h2><span class="sub">Books borrowed vs returned (sample data)</span></div>
+            <select class="form-control" style="max-width:150px;padding:8px 34px 8px 12px" onchange="window.StacklyToast('Filter applied','Chart view updated (demo).')">
+              <option>Last 12 months</option>
+              <option>Last 6 months</option>
+              <option>This year</option>
+            </select>
+          </div>
+          <div class="chart-wrap"><canvas id="monthlyBar" aria-label="Bar chart of monthly reading activity" role="img"></canvas></div>
+        </div>
+        <div class="panel reveal d1" data-searchable>
+          <div class="panel__head">
+            <div><h2>Borrowing by Category</h2><span class="sub">Your reading mix</span></div>
+          </div>
+          <div class="chart-wrap"><canvas id="categoryPie" aria-label="Doughnut chart of borrowing by category" role="img"></canvas></div>
+        </div>
+      </section>
+
+      <!-- Reading progress + events -->
+      <section class="dash-cols">
+        <div class="panel reveal" data-searchable>
+          <div class="panel__head"><div><h2>Reading Progress</h2><span class="sub">Your current reads</span></div></div>
+          <div class="progress-list">
+            <div class="progress-item">
+              <div class="top"><span class="n">Dune — Frank Herbert</span><span class="p">72%</span></div>
+              <div class="progress-track"><div class="progress-fill" data-value="72"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="top"><span class="n">Sapiens — Yuval Noah Harari</span><span class="p">45%</span></div>
+              <div class="progress-track"><div class="progress-fill progress-fill--teal" data-value="45"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="top"><span class="n">Atomic Habits — James Clear</span><span class="p">88%</span></div>
+              <div class="progress-track"><div class="progress-fill progress-fill--warm" data-value="88"></div></div>
+            </div>
+            <div class="progress-item">
+              <div class="top"><span class="n">The Midnight Library — Matt Haig</span><span class="p">30%</span></div>
+              <div class="progress-track"><div class="progress-fill" data-value="30"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel reveal d1" data-searchable>
+          <div class="panel__head"><div><h2>Upcoming Events</h2><span class="sub">Save your seat</span></div></div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="event">
+              <div class="event__date"><span class="d">14</span><span class="m">Jun</span></div>
+              <div class="event__body"><h3>Children's Story Hour</h3><div class="event__meta"><span><i class="fa-solid fa-clock"></i>10:00 AM</span><span><i class="fa-solid fa-location-dot"></i>Kids' Wing</span></div></div>
+            </div>
+            <div class="event">
+              <div class="event__date" style="background:var(--grad-cool)"><span class="d">21</span><span class="m">Jun</span></div>
+              <div class="event__body"><h3>Author Meet &amp; Greet</h3><div class="event__meta"><span><i class="fa-solid fa-clock"></i>5:00 PM</span><span><i class="fa-solid fa-location-dot"></i>Main Hall</span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent activity + recommended -->
+      <section class="panel reveal" data-searchable>
+        <div class="panel__head">
+          <div><h2>Recent Borrowing Activity</h2><span class="sub">Your last few transactions</span></div>
+          <a href="borrowing-history.html" class="btn btn--sm btn--ghost">Full History</a>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Book</th><th>Type</th><th>Date</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780441013593-S.jpg" alt="Dune cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Dune</div><div class="s">Frank Herbert</div></div></div></td><td>Borrowed</td><td>02 Jun 2026</td><td><span class="status status--active"><i class="fa-solid fa-book-open-reader"></i> Active</span></td></tr>
+              <tr><td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780062316097-S.jpg" alt="Sapiens cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Sapiens</div><div class="s">Yuval Noah Harari</div></div></div></td><td>Returned</td><td>28 May 2026</td><td><span class="status status--returned"><i class="fa-solid fa-check"></i> Returned</span></td></tr>
+              <tr><td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780735211292-S.jpg" alt="Atomic Habits cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Atomic Habits</div><div class="s">James Clear</div></div></div></td><td>Renewed</td><td>24 May 2026</td><td><span class="status status--pending"><i class="fa-solid fa-rotate"></i> Renewed</span></td></tr>
+              <tr><td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780735219090-S.jpg" alt="Where the Crawdads Sing cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Where the Crawdads Sing</div><div class="s">Delia Owens</div></div></div></td><td>Borrowed</td><td>19 May 2026</td><td><span class="status status--overdue"><i class="fa-solid fa-clock"></i> Overdue</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel reveal" data-searchable>
+        <div class="panel__head">
+          <div><h2>Recommended for You</h2><span class="sub">Based on your reading history</span></div>
+          <a href="browse-books.html" class="btn btn--sm btn--ghost">Browse All</a>
+        </div>
+        <div class="grid grid-4" id="dashRecommended"></div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/books.js"></script>
+<script src="../js/dashboard.js"></script>
+<script>
+  (function () {
+    var el = document.getElementById("dashRecommended");
+    if (!el || !window.STACKLY_BOOKS) return;
+    [16, 11, 12, 17].forEach(function (id) {
+      var b = window.getBookById(id);
+      if (b) el.insertAdjacentHTML("beforeend", window.renderBookCard(b));
+    });
+    el.querySelectorAll(".book-card__actions").forEach(function (actions) {
+      actions.remove();
+    });
+    el.querySelectorAll(".reveal").forEach(function (c) { c.classList.add("visible"); });
+  })();
+</script>
+</body>
+</html>

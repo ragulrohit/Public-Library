@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your Stackly Public Library profile and preferences.">
+  <title>Profile &amp; Settings | Stackly Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-guard>
+<div class="dash">
+  <aside class="dash-sidebar" id="sidebar">
+    <a href="../index.html" class="brand">
+      <img class="brand__logo" src="../images/Stackly_logo.png" alt="Stackly Public Library">
+      <button class="dash-sidebar__close" type="button" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></button>
+    </a>
+    <nav class="dash-nav" aria-label="Dashboard navigation">
+      <div class="dash-nav__label">Menu</div>
+      <a href="overview.html"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="my-books.html"><i class="fa-solid fa-book"></i> My Books</a>
+      <a href="browse-books.html"><i class="fa-solid fa-magnifying-glass"></i> Browse Books</a>
+      <a href="borrowing-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Borrowing History</a>
+      <a href="reservations.html"><i class="fa-solid fa-bookmark"></i> Reservations</a>
+      <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+      <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications <span class="pill" data-notif-count>3</span></a>
+      <a href="profile-settings.html" class="active"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+    </nav>
+    <div class="dash-sidebar__foot">
+      <button type="button" class="btn btn--light btn--sm btn--block" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <button class="dash-header__toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+      <div class="dash-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search settings…" data-global-search aria-label="Search dashboard">
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-dropdown">
+          <button class="user-chip" data-dropdown>
+            <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=96&name=Reader" alt="Profile avatar">
+            <div class="info"><div class="n" data-user-name>Reader</div><div class="e" data-user-email>reader@stacklylibrary.org</div></div>
+            <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:var(--muted)"></i>
+          </button>
+          <div class="dash-menu">
+            <a href="profile-settings.html"><i class="fa-solid fa-user"></i> My Profile</a>
+            <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+            <a href="../index.html"><i class="fa-solid fa-globe"></i> Public Website</a>
+            <button class="mrow" data-logout style="width:100%;text-align:left"><i class="fa-solid fa-right-from-bracket"></i><span class="t" style="color:var(--ink)">Logout</span></button>
+          </div>
+        </div>
+        <button class="icon-btn" data-logout aria-label="Logout" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </header>
+
+    <main class="dash-content">
+      <section class="profile-hero reveal" data-searchable>
+        <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=200&name=Reader" alt="Member profile photo">
+        <div>
+          <h1 data-user-name>Reader</h1>
+          <p data-user-email>reader@stacklylibrary.org</p>
+          <span class="role-tag"><i class="fa-solid fa-id-badge"></i> <span data-user-role>Member</span></span>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:10px;flex-wrap:wrap">
+          <label class="btn btn--light btn--sm" style="cursor:pointer">
+            <i class="fa-solid fa-camera"></i> Change Photo
+            <input type="file" accept="image/*" data-avatar-input hidden>
+          </label>
+        </div>
+      </section>
+
+      <div class="dash-cols">
+        <section class="panel reveal" data-searchable>
+          <div class="panel__head"><div><h2>Profile Information</h2><span class="sub">Update your personal details</span></div></div>
+          <form data-profile-form novalidate>
+            <div class="form-group">
+              <label for="pName">Full Name</label>
+              <input id="pName" class="form-control" type="text" name="fullname" value="Reader" placeholder="Your full name" data-user-name-input>
+            </div>
+            <div class="form-group">
+              <label for="pEmail">Email Address</label>
+              <input id="pEmail" class="form-control" type="email" name="email" placeholder="you@example.com" data-user-email-input>
+            </div>
+            <div class="form-group">
+              <label for="pPhone">Phone Number</label>
+              <input id="pPhone" class="form-control" type="tel" name="phone" value="+1 000 000 0000" placeholder="+1 000 000 0000">
+            </div>
+            <div class="form-group">
+              <label for="pRole">Role</label>
+              <select id="pRole" class="form-control" name="role">
+                <option>Member</option>
+                <option>Librarian</option>
+                <option>Administrator</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pBio">Reading Bio</label>
+              <textarea id="pBio" class="form-control" name="bio" placeholder="Tell us about your reading interests..." style="min-height:100px">Lifelong reader who loves science fiction, history and a good cup of coffee.</textarea>
+            </div>
+            <button type="submit" class="btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+          </form>
+        </section>
+
+        <div>
+          <section class="panel reveal d1" data-searchable>
+            <div class="panel__head"><div><h2>Account Preferences</h2><span class="sub">Control your notifications</span></div></div>
+            <div class="settings-row">
+              <div><div class="t">Due-date reminders</div><div class="s">Get notified before books are due</div></div>
+              <label class="switch"><input type="checkbox" checked><span class="sl"></span></label>
+            </div>
+            <div class="settings-row">
+              <div><div class="t">Reservation updates</div><div class="s">Alerts when reserved books are ready</div></div>
+              <label class="switch"><input type="checkbox" checked><span class="sl"></span></label>
+            </div>
+            <div class="settings-row">
+              <div><div class="t">Event invitations</div><div class="s">Emails about upcoming library events</div></div>
+              <label class="switch"><input type="checkbox"><span class="sl"></span></label>
+            </div>
+            <div class="settings-row">
+              <div><div class="t">Newsletter</div><div class="s">Monthly reading recommendations</div></div>
+              <label class="switch"><input type="checkbox" checked><span class="sl"></span></label>
+            </div>
+            <div class="settings-row">
+              <div><div class="t">Reduce motion</div><div class="s">Minimise animations for comfort</div></div>
+              <label class="switch"><input type="checkbox" id="reduceMotionToggle"><span class="sl"></span></label>
+            </div>
+          </section>
+
+          <section class="panel reveal d2" data-searchable>
+            <div class="panel__head"><div><h2>Security</h2><span class="sub">Demo account actions</span></div></div>
+            <div class="settings-row">
+              <div><div class="t">Change Password</div><div class="s">Update your account password</div></div>
+              <button class="btn btn--sm btn--ghost" onclick="window.StacklyToast('Demo action','Password changes require a secure backend.')"><i class="fa-solid fa-key"></i> Change</button>
+            </div>
+            <div class="settings-row">
+              <div><div class="t">Two-Factor Authentication</div><div class="s">Extra security for your account</div></div>
+              <label class="switch"><input type="checkbox"><span class="sl"></span></label>
+            </div>
+            <div class="settings-row">
+              <div><div class="t">Delete Account</div><div class="s">Permanently remove your data</div></div>
+              <button class="btn btn--sm btn--warm" onclick="window.StacklyToast('Not available in demo','Account deletion requires a secure backend.','error')"><i class="fa-solid fa-trash"></i> Delete</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="panel reveal" style="background:var(--cream);border-color:#f0c9a0" data-searchable>
+        <p style="margin:0;color:#9a6320;font-size:.86rem"><i class="fa-solid fa-circle-info"></i> <strong>Demo note:</strong> Profile changes are saved only in your browser's localStorage. A production system would persist them securely on the server.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/dashboard.js"></script>
+<script>
+  (function () {
+    var session = window.StacklyAuth.getSession() || {};
+    var nInput = document.querySelector("[data-user-name-input]");
+    var eInput = document.querySelector("[data-user-email-input]");
+    if (nInput && session.name) nInput.value = session.name;
+    if (eInput && session.email) eInput.value = session.email;
+    var rm = document.getElementById("reduceMotionToggle");
+    if (rm) rm.addEventListener("change", function () {
+      document.documentElement.style.scrollBehavior = rm.checked ? "auto" : "";
+      window.StacklyToast("Preference saved", rm.checked ? "Reduced motion enabled." : "Reduced motion disabled.");
+    });
+  })();
+</script>
+</body>
+</html>

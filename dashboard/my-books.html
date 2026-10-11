@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your currently borrowed books in the Stackly Public Library dashboard.">
+  <title>My Books | Stackly Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-guard>
+<div class="dash">
+  <aside class="dash-sidebar" id="sidebar">
+    <a href="../index.html" class="brand">
+      <img class="brand__logo" src="../images/Stackly_logo.png" alt="Stackly Public Library">
+      <button class="dash-sidebar__close" type="button" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></button>
+    </a>
+    <nav class="dash-nav" aria-label="Dashboard navigation">
+      <div class="dash-nav__label">Menu</div>
+      <a href="overview.html"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="my-books.html" class="active"><i class="fa-solid fa-book"></i> My Books</a>
+      <a href="browse-books.html"><i class="fa-solid fa-magnifying-glass"></i> Browse Books</a>
+      <a href="borrowing-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Borrowing History</a>
+      <a href="reservations.html"><i class="fa-solid fa-bookmark"></i> Reservations</a>
+      <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+      <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications <span class="pill" data-notif-count>3</span></a>
+      <a href="profile-settings.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+    </nav>
+    <div class="dash-sidebar__foot">
+      <button type="button" class="btn btn--light btn--sm btn--block" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <button class="dash-header__toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+      <div class="dash-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search my books…" data-global-search aria-label="Search my books">
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-dropdown">
+          <button class="user-chip" data-dropdown>
+            <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=96&name=Reader" alt="Profile avatar">
+            <div class="info"><div class="n" data-user-name>Reader</div><div class="e" data-user-email>reader@stacklylibrary.org</div></div>
+            <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:var(--muted)"></i>
+          </button>
+          <div class="dash-menu">
+            <a href="profile-settings.html"><i class="fa-solid fa-user"></i> My Profile</a>
+            <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+            <a href="../index.html"><i class="fa-solid fa-globe"></i> Public Website</a>
+            <button class="mrow" data-logout style="width:100%;text-align:left"><i class="fa-solid fa-right-from-bracket"></i><span class="t" style="color:var(--ink)">Logout</span></button>
+          </div>
+        </div>
+        <button class="icon-btn" data-logout aria-label="Logout" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </header>
+
+    <main class="dash-content">
+      <div class="panel__head" style="margin-bottom:22px">
+        <div>
+          <h1 style="margin:0;font-size:1.6rem">My Books</h1>
+          <p style="margin:0;color:var(--muted);font-size:.9rem">Currently borrowed titles, due dates and quick actions.</p>
+        </div>
+        <a href="browse-books.html" class="btn btn--sm"><i class="fa-solid fa-plus"></i> Borrow More</a>
+      </div>
+
+      <section class="dash-stats">
+        <div class="dash-stat reveal" data-searchable>
+          <div class="dash-stat__top"><div class="dash-stat__ic ic-purple"><i class="fa-solid fa-book-open-reader"></i></div></div>
+          <div class="num" data-count="4">0</div><div class="lbl">Currently Borrowed</div>
+        </div>
+        <div class="dash-stat reveal d1" data-searchable>
+          <div class="dash-stat__top"><div class="dash-stat__ic ic-teal"><i class="fa-solid fa-calendar-check"></i></div></div>
+          <div class="num" data-count="4">0</div><div class="lbl">Due This Month</div>
+        </div>
+        <div class="dash-stat reveal d2" data-searchable>
+          <div class="dash-stat__top"><div class="dash-stat__ic ic-orange"><i class="fa-solid fa-rotate"></i></div></div>
+          <div class="num" data-count="2">0</div><div class="lbl">Available Renewals</div>
+        </div>
+        <div class="dash-stat reveal d3" data-searchable>
+          <div class="dash-stat__top"><div class="dash-stat__ic ic-blue"><i class="fa-solid fa-triangle-exclamation"></i></div></div>
+          <div class="num" data-count="1">0</div><div class="lbl">Overdue</div>
+        </div>
+      </section>
+
+      <section class="panel reveal" data-searchable>
+        <div class="panel__head"><div><h2>Borrowed Titles</h2><span class="sub">Sample data for demonstration</span></div></div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead><tr><th>Book</th><th>Borrowed</th><th>Due Date</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr data-book-row data-book-title="Dune">
+                <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780441013593-S.jpg" alt="Dune cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Dune</div><div class="s">Frank Herbert</div></div></div></td>
+                <td>02 Jun 2026</td><td>23 Jun 2026</td>
+                <td data-status><span class="status status--active"><i class="fa-solid fa-book-open-reader"></i> Active</span></td>
+                <td data-actions><div style="display:flex;gap:8px"><button class="btn btn--sm btn--ghost" data-renew><i class="fa-solid fa-rotate"></i> Renew</button><button class="btn btn--sm" data-return><i class="fa-solid fa-arrow-right-from-bracket"></i> Return</button></div></td>
+              </tr>
+              <tr data-book-row data-book-title="Atomic Habits">
+                <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780735211292-S.jpg" alt="Atomic Habits cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Atomic Habits</div><div class="s">James Clear</div></div></div></td>
+                <td>24 May 2026</td><td>14 Jun 2026</td>
+                <td data-status><span class="status status--active"><i class="fa-solid fa-book-open-reader"></i> Active</span></td>
+                <td data-actions><div style="display:flex;gap:8px"><button class="btn btn--sm btn--ghost" data-renew><i class="fa-solid fa-rotate"></i> Renew</button><button class="btn btn--sm" data-return><i class="fa-solid fa-arrow-right-from-bracket"></i> Return</button></div></td>
+              </tr>
+              <tr data-book-row data-book-title="Where the Crawdads Sing">
+                <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780735219090-S.jpg" alt="Where the Crawdads Sing cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Where the Crawdads Sing</div><div class="s">Delia Owens</div></div></div></td>
+                <td>19 May 2026</td><td>05 Jun 2026</td>
+                <td data-status><span class="status status--overdue"><i class="fa-solid fa-clock"></i> Overdue</span></td>
+                <td data-actions><div style="display:flex;gap:8px"><button class="btn btn--sm btn--ghost" data-renew><i class="fa-solid fa-rotate"></i> Renew</button><button class="btn btn--sm" data-return><i class="fa-solid fa-arrow-right-from-bracket"></i> Return</button></div></td>
+              </tr>
+              <tr data-book-row data-book-title="The Midnight Library">
+                <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780525559474-S.jpg" alt="The Midnight Library cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">The Midnight Library</div><div class="s">Matt Haig</div></div></div></td>
+                <td>30 May 2026</td><td>20 Jun 2026</td>
+                <td data-status><span class="status status--active"><i class="fa-solid fa-book-open-reader"></i> Active</span></td>
+                <td data-actions><div style="display:flex;gap:8px"><button class="btn btn--sm btn--ghost" data-renew><i class="fa-solid fa-rotate"></i> Renew</button><button class="btn btn--sm" data-return><i class="fa-solid fa-arrow-right-from-bracket"></i> Return</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="panel reveal" style="background:var(--cream);border-color:#f0c9a0" data-searchable>
+        <p style="margin:0;color:#9a6320;font-size:.86rem"><i class="fa-solid fa-circle-info"></i> <strong>Demo note:</strong> Returning and renewing books here is simulated on the client only. Real transactions require the library's backend system.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

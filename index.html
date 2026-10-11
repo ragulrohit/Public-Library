@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stackly Public Library — discover a world of knowledge with books, digital resources, reading programs and community events.">
+  <title>Stackly Public Library | Discover a World of Knowledge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="books.html">Books &amp; Collections</a>
+        <a href="services.html">Library Services</a>
+        <a href="contact.html">Contact Us</a>
+        <div class="nav-actions nav-actions--mobile">
+          <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <div class="nav-actions nav-actions--desktop">
+        <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <span class="eyebrow">Welcome to Stackly</span>
+          <h1>Discover a <span>World of Knowledge</span></h1>
+          <p class="hero__lead">
+            Stackly Public Library is a welcoming space for every curious mind. Borrow from
+            thousands of titles, join reading programs, explore our digital collection and grow
+            your love of learning — all in one modern community library.
+          </p>
+          <div class="hero__cta">
+            <a href="books.html" class="btn"><i class="fa-solid fa-book-open"></i> Explore Books</a>
+            <a href="signup.html" class="btn btn--ghost"><i class="fa-solid fa-id-card"></i> Join Our Library</a>
+          </div>
+          <div class="hero__stats">
+            <div>
+              <div class="num" data-count="48250" data-suffix="+">0</div>
+              <div class="lbl">Books &amp; Resources</div>
+            </div>
+            <div>
+              <div class="num" data-count="12700" data-suffix="+">0</div>
+              <div class="lbl">Registered Members</div>
+            </div>
+            <div>
+              <div class="num" data-count="4.9" data-decimals="1" data-suffix="/5">0</div>
+              <div class="lbl">Member Rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero__media">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=70"
+               alt="Readers exploring books in a bright modern public library"
+               data-fallback="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1000&q=70">
+          <div class="hero__float hero__float--a">
+            <i class="fa-solid fa-user-group"></i>
+            <div>
+              <div class="t">1,200+ Events</div>
+              <div class="s">Hosted last year</div>
+            </div>
+          </div>
+          <div class="hero__float hero__float--b">
+            <i class="fa-solid fa-book-bookmark"></i>
+            <div>
+              <div class="t">Free Membership</div>
+              <div class="s">For all ages</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="card reveal">
+          <div class="card__icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Vast Collection</h3>
+          <p>Fiction, science, history and more — thousands of curated titles for every reader.</p>
+        </div>
+        <div class="card reveal d1">
+          <div class="card__icon" style="background:var(--grad-cool)"><i class="fa-solid fa-laptop"></i></div>
+          <h3>Digital Library</h3>
+          <p>E-books, audiobooks and research databases available anytime from any device.</p>
+        </div>
+        <div class="card reveal d2">
+          <div class="card__icon" style="background:var(--grad-warm)"><i class="fa-solid fa-people-roof"></i></div>
+          <h3>Community Hub</h3>
+          <p>A calm place to study, meet, attend workshops and connect with fellow readers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED BOOKS ================= -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Featured Books</span>
+        <h2>Hand-picked reads for this month</h2>
+        <p>Fresh from our shelves — popular titles our community can't stop borrowing.</p>
+      </div>
+      <div class="grid grid-4" id="featuredBooks"></div>
+      <div class="text-center reveal" style="margin-top:40px">
+        <a href="books.html" class="btn">View All Books <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Explore</span>
+        <h2>Popular Categories</h2>
+        <p>Find your next favourite by browsing our most-loved sections.</p>
+      </div>
+      <div class="grid grid-4">
+        <a href="books.html?category=Fiction" class="cat-tile reveal">
+          <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=700&q=70" alt="Fiction book shelves">
+          <div class="cat-tile__body"><h3>Fiction</h3><span>6,200+ titles</span></div>
+        </a>
+        <a href="books.html?category=Science" class="cat-tile reveal d1">
+          <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=700&q=70" alt="Science books">
+          <div class="cat-tile__body"><h3>Science</h3><span>2,800+ titles</span></div>
+        </a>
+        <a href="books.html?category=History" class="cat-tile reveal d2">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=700&q=70" alt="History book collection">
+          <div class="cat-tile__body"><h3>History</h3><span>1,900+ titles</span></div>
+        </a>
+        <a href="books.html?category=Fantasy" class="cat-tile reveal d3">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=70" alt="Fantasy reading corner">
+          <div class="cat-tile__body"><h3>Fantasy</h3><span>1,500+ titles</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat stat--purple reveal">
+          <i class="fa-solid fa-book"></i>
+          <div class="num" data-count="48250" data-suffix="+">0</div>
+          <div class="lbl">Total Books</div>
+        </div>
+        <div class="stat stat--teal reveal d1">
+          <i class="fa-solid fa-users"></i>
+          <div class="num" data-count="12700" data-suffix="+">0</div>
+          <div class="lbl">Registered Members</div>
+        </div>
+        <div class="stat stat--blue reveal d2">
+          <i class="fa-solid fa-circle-check"></i>
+          <div class="num" data-count="39200" data-suffix="+">0</div>
+          <div class="lbl">Available Books</div>
+        </div>
+        <div class="stat stat--orange reveal d3">
+          <i class="fa-solid fa-calendar-star"></i>
+          <div class="num" data-count="860" data-suffix="+">0</div>
+          <div class="lbl">Reading Events</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RECOMMENDED ================= -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">For You</span>
+        <h2>Recommended Books</h2>
+        <p>Loved by our librarians and members alike.</p>
+      </div>
+      <div class="grid grid-4" id="recommendedBooks"></div>
+    </div>
+  </section>
+
+  <!-- ================= EVENTS ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What's On</span>
+        <h2>Upcoming Library Events</h2>
+        <p>Join us for workshops, readings and community gatherings.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="event reveal">
+          <div class="event__date"><span class="d">14</span><span class="m">Jun</span></div>
+          <div class="event__body">
+            <h3>Children's Story Hour</h3>
+            <p>A magical morning of storytelling, crafts and imagination for ages 4–9.</p>
+            <div class="event__meta"><span><i class="fa-solid fa-clock"></i>10:00 AM</span><span><i class="fa-solid fa-location-dot"></i>Kids' Wing</span></div>
+          </div>
+        </article>
+        <article class="event reveal d1">
+          <div class="event__date" style="background:var(--grad-cool)"><span class="d">21</span><span class="m">Jun</span></div>
+          <div class="event__body">
+            <h3>Author Meet &amp; Greet</h3>
+            <p>Meet bestselling local authors, ask questions and get your books signed.</p>
+            <div class="event__meta"><span><i class="fa-solid fa-clock"></i>5:00 PM</span><span><i class="fa-solid fa-location-dot"></i>Main Hall</span></div>
+          </div>
+        </article>
+        <article class="event reveal d2">
+          <div class="event__date" style="background:var(--grad-warm)"><span class="d">29</span><span class="m">Jun</span></div>
+          <div class="event__body">
+            <h3>Digital Skills Workshop</h3>
+            <p>Learn to use e-readers, research databases and our digital library tools.</p>
+            <div class="event__meta"><span><i class="fa-solid fa-clock"></i>2:00 PM</span><span><i class="fa-solid fa-location-dot"></i>Tech Lab</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="band section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Testimonials</span>
+        <h2>Loved by our community</h2>
+        <p>Hear from members who make Stackly their second home.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="testimonial reveal">
+          <span class="quote">"</span>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>The children's programs transformed my daughter's reading habits. She now asks to visit every weekend!</p>
+          <div class="testimonial__person">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=70" alt="Portrait of member Amara Okafor" data-fallback="https://ui-avatars.com/api/?name=Amara+Okafor&background=6c3fc5&color=fff">
+            <div><div class="n">Amara Okafor</div><div class="r">Member since 2019</div></div>
+          </div>
+        </div>
+        <div class="testimonial reveal d1">
+          <span class="quote">"</span>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>The research assistance helped me through my thesis. The staff are knowledgeable and genuinely kind.</p>
+          <div class="testimonial__person">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=70" alt="Portrait of member Daniel Reyes" data-fallback="https://ui-avatars.com/api/?name=Daniel+Reyes&background=2b6cb0&color=fff">
+            <div><div class="n">Daniel Reyes</div><div class="r">Graduate student</div></div>
+          </div>
+        </div>
+        <div class="testimonial reveal d2">
+          <span class="quote">"</span>
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p>A calm, beautiful space with an amazing digital collection. I borrow audiobooks for my commute weekly.</p>
+          <div class="testimonial__person">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=70" alt="Portrait of member Priya Nair" data-fallback="https://ui-avatars.com/api/?name=Priya+Nair&background=0fb5a5&color=fff">
+            <div><div class="n">Priya Nair</div><div class="r">Member since 2021</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter reveal">
+        <span class="eyebrow" style="justify-content:center">Stay in the loop</span>
+        <h2>Get new arrivals &amp; events in your inbox</h2>
+        <p>Join our newsletter for monthly reading recommendations and event invitations.</p>
+        <form data-newsletter novalidate>
+          <label class="sr-only" for="newsEmail">Email address</label>
+          <input id="newsEmail" type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn--warm">Subscribe <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="brand">
+            <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+          </a>
+          <p>A modern community library connecting curious minds with knowledge, culture and lifelong learning.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Stackly on X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Stackly on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="books.html">Books &amp; Collections</a></li>
+            <li><a href="services.html">Library Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Book Borrowing</a></li>
+            <li><a href="services.html">Digital Library</a></li>
+            <li><a href="services.html">Reading Rooms</a></li>
+            <li><a href="services.html">Children's Programs</a></li>
+            <li><a href="404.html">Research Assistance</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Visit Us</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>12 Reading Lane, Knowledge District, Your City</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:hello@stacklylibrary.org">hello@stacklylibrary.org</a></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 9:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Public Library. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; Vanilla JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/books.js"></script>
+  <script>
+    (function () {
+      function paint(containerId, ids) {
+        var el = document.getElementById(containerId);
+        if (!el || !window.STACKLY_BOOKS) return;
+        el.innerHTML = ids
+          .map(function (id) { return window.getBookById(id); })
+          .filter(Boolean)
+          .map(window.renderBookCard)
+          .join("");
+        el.querySelectorAll(".book-card__actions").forEach(function (actions) {
+          actions.remove();
+        });
+        if (window.StacklyBindImageFallbacks) window.StacklyBindImageFallbacks(el);
+        el.querySelectorAll(".reveal").forEach(function (c, i) {
+          setTimeout(function () { c.classList.add("visible"); }, 80 * i);
+        });
+      }
+      paint("featuredBooks", [7, 12, 11, 16]);
+      paint("recommendedBooks", [9, 13, 17, 23]);
+    })();
+  </script>
+</body>
+</html>

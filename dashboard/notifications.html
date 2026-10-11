@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your Stackly Public Library notifications and announcements.">
+  <title>Notifications | Stackly Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-guard>
+<div class="dash">
+  <aside class="dash-sidebar" id="sidebar">
+    <a href="../index.html" class="brand">
+      <img class="brand__logo" src="../images/Stackly_logo.png" alt="Stackly Public Library">
+      <button class="dash-sidebar__close" type="button" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></button>
+    </a>
+    <nav class="dash-nav" aria-label="Dashboard navigation">
+      <div class="dash-nav__label">Menu</div>
+      <a href="overview.html"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="my-books.html"><i class="fa-solid fa-book"></i> My Books</a>
+      <a href="browse-books.html"><i class="fa-solid fa-magnifying-glass"></i> Browse Books</a>
+      <a href="borrowing-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Borrowing History</a>
+      <a href="reservations.html"><i class="fa-solid fa-bookmark"></i> Reservations</a>
+      <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+      <a href="notifications.html" class="active"><i class="fa-solid fa-bell"></i> Notifications <span class="pill" data-notif-count>3</span></a>
+      <a href="profile-settings.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+    </nav>
+    <div class="dash-sidebar__foot">
+      <button type="button" class="btn btn--light btn--sm btn--block" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <button class="dash-header__toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+      <div class="dash-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search notifications…" data-global-search aria-label="Search dashboard">
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-dropdown">
+          <button class="user-chip" data-dropdown>
+            <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=96&name=Reader" alt="Profile avatar">
+            <div class="info"><div class="n" data-user-name>Reader</div><div class="e" data-user-email>reader@stacklylibrary.org</div></div>
+            <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:var(--muted)"></i>
+          </button>
+          <div class="dash-menu">
+            <a href="profile-settings.html"><i class="fa-solid fa-user"></i> My Profile</a>
+            <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+            <a href="../index.html"><i class="fa-solid fa-globe"></i> Public Website</a>
+            <button class="mrow" data-logout style="width:100%;text-align:left"><i class="fa-solid fa-right-from-bracket"></i><span class="t" style="color:var(--ink)">Logout</span></button>
+          </div>
+        </div>
+        <button class="icon-btn" data-logout aria-label="Logout" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </header>
+
+    <main class="dash-content">
+      <div class="panel__head" style="margin-bottom:22px">
+        <div>
+          <h1 style="margin:0;font-size:1.6rem">Notifications</h1>
+          <p style="margin:0;color:var(--muted);font-size:.9rem">Due-date reminders, reservation updates and library announcements.</p>
+        </div>
+        <button class="btn btn--sm btn--ghost" data-mark-all-read><i class="fa-solid fa-check-double"></i> Mark all as read</button>
+      </div>
+
+      <section class="panel reveal" data-searchable>
+        <div class="panel__head">
+          <div><h2>All Notifications</h2><span class="sub">Click an item to toggle read / unread</span></div>
+        </div>
+        <div data-notif-list>
+          <div class="notif-item unread" data-searchable>
+            <div class="notif-item__ic" style="background:var(--grad-warm)"><i class="fa-solid fa-clock"></i></div>
+            <div style="flex:1">
+              <div class="t">"Dune" is due in 2 days</div>
+              <div class="s">Return or renew "Dune" by 23 Jun 2026 to avoid a late fee.</div>
+              <div class="time"><i class="fa-regular fa-clock"></i> 2 hours ago</div>
+            </div>
+            <button class="mini-btn" data-mark-read title="Mark as read"><i class="fa-solid fa-check"></i></button>
+          </div>
+
+          <div class="notif-item unread" data-searchable>
+            <div class="notif-item__ic" style="background:var(--grad-purple)"><i class="fa-solid fa-bookmark"></i></div>
+            <div style="flex:1">
+              <div class="t">Reservation ready: Project Hail Mary</div>
+              <div class="s">Your reserved copy is ready for pickup at the front desk for the next 3 days.</div>
+              <div class="time"><i class="fa-regular fa-clock"></i> 6 hours ago</div>
+            </div>
+            <button class="mini-btn" data-mark-read title="Mark as read"><i class="fa-solid fa-check"></i></button>
+          </div>
+
+          <div class="notif-item unread" data-searchable>
+            <div class="notif-item__ic" style="background:var(--grad-cool)"><i class="fa-solid fa-bullhorn"></i></div>
+            <div style="flex:1">
+              <div class="t">New arrivals this week</div>
+              <div class="s">12 new titles were added to the collection. Explore the Fiction and Science shelves.</div>
+              <div class="time"><i class="fa-regular fa-clock"></i> Yesterday</div>
+            </div>
+            <button class="mini-btn" data-mark-read title="Mark as read"><i class="fa-solid fa-check"></i></button>
+          </div>
+
+          <div class="notif-item" data-searchable>
+            <div class="notif-item__ic ic-blue" style="background:linear-gradient(135deg,#2b6cb0,#5b9bd5)"><i class="fa-solid fa-calendar-check"></i></div>
+            <div style="flex:1">
+              <div class="t">Event reminder: Author Meet &amp; Greet</div>
+              <div class="s">Join us on 21 Jun at 5:00 PM in the Main Hall. Your seat is confirmed.</div>
+              <div class="time"><i class="fa-regular fa-clock"></i> 2 days ago</div>
+            </div>
+            <button class="mini-btn" data-mark-unread title="Mark as unread"><i class="fa-regular fa-envelope"></i></button>
+          </div>
+
+          <div class="notif-item" data-searchable>
+            <div class="notif-item__ic" style="background:var(--grad-warm)"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div style="flex:1">
+              <div class="t">Overdue notice: Where the Crawdads Sing</div>
+              <div class="s">This item is past its due date. Please return it to the library as soon as possible.</div>
+              <div class="time"><i class="fa-regular fa-clock"></i> 3 days ago</div>
+            </div>
+            <button class="mini-btn" data-mark-unread title="Mark as unread"><i class="fa-regular fa-envelope"></i></button>
+          </div>
+
+          <div class="notif-item" data-searchable>
+            <div class="notif-item__ic" style="background:var(--grad-purple)"><i class="fa-solid fa-star"></i></div>
+            <div style="flex:1">
+              <div class="t">Thanks for being a member!</div>
+              <div class="s">You've borrowed 126 books with Stackly. That's an impressive reading streak.</div>
+              <div class="time"><i class="fa-regular fa-clock"></i> 1 week ago</div>
+            </div>
+            <button class="mini-btn" data-mark-unread title="Mark as unread"><i class="fa-regular fa-envelope"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="panel reveal d1" style="background:var(--cream);border-color:#f0c9a0" data-searchable>
+        <p style="margin:0;color:#9a6320;font-size:.86rem"><i class="fa-solid fa-circle-info"></i> <strong>Demo note:</strong> These notifications are sample content. Production reminders are generated by the library's backend.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

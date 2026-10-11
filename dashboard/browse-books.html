@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the full Stackly Public Library catalogue from your dashboard.">
+  <title>Browse Books | Stackly Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-guard>
+<div class="dash">
+  <aside class="dash-sidebar" id="sidebar">
+    <a href="../index.html" class="brand">
+      <img class="brand__logo" src="../images/Stackly_logo.png" alt="Stackly Public Library">
+      <button class="dash-sidebar__close" type="button" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></button>
+    </a>
+    <nav class="dash-nav" aria-label="Dashboard navigation">
+      <div class="dash-nav__label">Menu</div>
+      <a href="overview.html"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="my-books.html"><i class="fa-solid fa-book"></i> My Books</a>
+      <a href="browse-books.html" class="active"><i class="fa-solid fa-magnifying-glass"></i> Browse Books</a>
+      <a href="borrowing-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Borrowing History</a>
+      <a href="reservations.html"><i class="fa-solid fa-bookmark"></i> Reservations</a>
+      <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+      <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications <span class="pill" data-notif-count>3</span></a>
+      <a href="profile-settings.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+    </nav>
+    <div class="dash-sidebar__foot">
+      <button type="button" class="btn btn--light btn--sm btn--block" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <button class="dash-header__toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+      <div class="dash-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Quick search…" data-global-search aria-label="Search dashboard">
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-dropdown">
+          <button class="user-chip" data-dropdown>
+            <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=96&name=Reader" alt="Profile avatar">
+            <div class="info"><div class="n" data-user-name>Reader</div><div class="e" data-user-email>reader@stacklylibrary.org</div></div>
+            <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:var(--muted)"></i>
+          </button>
+          <div class="dash-menu">
+            <a href="profile-settings.html"><i class="fa-solid fa-user"></i> My Profile</a>
+            <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+            <a href="../index.html"><i class="fa-solid fa-globe"></i> Public Website</a>
+            <button class="mrow" data-logout style="width:100%;text-align:left"><i class="fa-solid fa-right-from-bracket"></i><span class="t" style="color:var(--ink)">Logout</span></button>
+          </div>
+        </div>
+        <button class="icon-btn" data-logout aria-label="Logout" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </header>
+
+    <main class="dash-content">
+      <div class="panel__head" style="margin-bottom:22px">
+        <div>
+          <h1 style="margin:0;font-size:1.6rem">Browse Books</h1>
+          <p style="margin:0;color:var(--muted);font-size:.9rem">Search, filter and sort the full catalogue, then borrow instantly.</p>
+        </div>
+      </div>
+
+      <div class="toolbar reveal" data-searchable>
+        <div class="form-group toolbar__search">
+          <label for="bookSearch">Search books</label>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="bookSearch" class="form-control" type="search" placeholder="Search by title or author...">
+        </div>
+        <div class="form-group">
+          <label for="catFilter">Category</label>
+          <select id="catFilter" class="form-control"><option value="all">All categories</option></select>
+        </div>
+        <div class="form-group">
+          <label for="availFilter">Availability</label>
+          <select id="availFilter" class="form-control">
+            <option value="all">All books</option>
+            <option value="available">Available now</option>
+            <option value="out">Checked out</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sortSelect">Sort by</label>
+          <select id="sortSelect" class="form-control">
+            <option value="default">Featured</option>
+            <option value="title-asc">Title (A–Z)</option>
+            <option value="title-desc">Title (Z–A)</option>
+            <option value="year-new">Newest first</option>
+            <option value="year-old">Oldest first</option>
+            <option value="rating">Highest rated</option>
+          </select>
+        </div>
+        <div class="form-group" style="flex:0">
+          <label>&nbsp;</label>
+          <button id="resetFilters" class="btn btn--ghost btn--sm" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+        </div>
+      </div>
+
+      <p id="resultCount" style="margin:0 0 20px;font-weight:600;color:var(--ink)">Loading books…</p>
+
+      <div class="grid grid-4" id="bookGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/books.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

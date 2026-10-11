@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Stackly Public Library services — borrowing, digital library, e-books, reading rooms, children's programs, research help and more.">
+  <title>Library Services | Stackly Public Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="books.html">Books &amp; Collections</a>
+        <a href="services.html">Library Services</a>
+        <a href="contact.html">Contact Us</a>
+        <div class="nav-actions nav-actions--mobile">
+          <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <div class="nav-actions nav-actions--desktop">
+        <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="hero" style="padding:64px 0 60px">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <div class="container">
+      <div class="section-head" style="margin-bottom:0;max-width:780px">
+        <span class="eyebrow">Library Services</span>
+        <h1>Everything we offer, all in one place</h1>
+        <p>From borrowing your first book to advanced research support, Stackly is here to help at every step.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section class="section" style="padding-top:30px">
+    <div class="container">
+      <div class="grid grid-4 services-grid">
+
+        <article class="card reveal" data-service
+          data-title="Book Borrowing and Returns"
+          data-icon="fa-solid fa-book-open-reader"
+          data-desc="Borrow up to eight titles at a time for 21 days. Return items at the front desk or in our 24-hour drop box, and renew online or by phone when no one else is waiting."
+          data-points="Up to 8 items per member|21-day loan period|Two free renewals|Self-service return drop box">
+          <div class="card__icon"><i class="fa-solid fa-book-open-reader"></i></div>
+          <h3>Book Borrowing &amp; Returns</h3>
+          <p>Simple, flexible borrowing with easy renewals and returns.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal d1" data-service
+          data-title="Digital Library"
+          data-icon="fa-solid fa-laptop-code"
+          data-desc="Access thousands of e-books, audiobooks, magazines and newspapers through our online catalogue. Sign in with your membership to stream or download instantly."
+          data-points="12,000+ digital titles|Audiobooks and e-magazines|Offline downloads|Works on any device">
+          <div class="card__icon" style="background:var(--grad-cool)"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Digital Library</h3>
+          <p>Stream and download titles from anywhere, anytime.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal d2" data-service
+          data-title="E-Books and Online Resources"
+          data-icon="fa-solid fa-database"
+          data-desc="Tap into trusted research databases, academic journals, language-learning tools and encyclopaedias — free with your library card."
+          data-points="Academic journals|Language learning tools|Encyclopaedias &amp; atlases|Study and exam prep">
+          <div class="card__icon" style="background:var(--grad-warm)"><i class="fa-solid fa-database"></i></div>
+          <h3>E-Books &amp; Online Resources</h3>
+          <p>Trusted databases and learning tools at your fingertips.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal d3" data-service
+          data-title="Reading Rooms"
+          data-icon="fa-solid fa-couch"
+          data-desc="Reserve a quiet seat in our silent reading rooms, book a group collaboration table, or settle into a comfortable armchair by the windows."
+          data-points="Silent study rooms|Bookable group tables|Free high-speed Wi-Fi|Accessible seating">
+          <div class="card__icon" style="background:linear-gradient(135deg,#2b6cb0,#5b9bd5)"><i class="fa-solid fa-couch"></i></div>
+          <h3>Reading Rooms</h3>
+          <p>Quiet, comfortable spaces to read, study and focus.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal" data-service
+          data-title="Children's Reading Programs"
+          data-icon="fa-solid fa-child-reaching"
+          data-desc="Story hours, reading challenges, craft clubs and summer programmes designed to spark a lifelong love of reading in younger members."
+          data-points="Weekly story hour|Summer reading challenge|Homework help club|Family craft sessions">
+          <div class="card__icon" style="background:linear-gradient(135deg,#e94f9b,#f5822b)"><i class="fa-solid fa-child-reaching"></i></div>
+          <h3>Children's Reading Programs</h3>
+          <p>Fun, engaging activities that grow young readers.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal d1" data-service
+          data-title="Research Assistance"
+          data-icon="fa-solid fa-microscope"
+          data-desc="Our reference librarians help you locate sources, cite correctly, navigate databases and plan research for essays, projects or genealogy."
+          data-points="One-to-one research help|Citation &amp; referencing support|Inter-library loans|Genealogy sessions">
+          <div class="card__icon" style="background:linear-gradient(135deg,#0a8c80,#0fb5a5)"><i class="fa-solid fa-microscope"></i></div>
+          <h3>Research Assistance</h3>
+          <p>Expert help finding and citing the right sources.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal d2" data-service
+          data-title="Membership Registration"
+          data-icon="fa-solid fa-id-card"
+          data-desc="Join for free in minutes. Membership unlocks borrowing, digital access, event registration and study room bookings for everyone in your household."
+          data-points="Free to join|All ages welcome|Household add-ons|Instant digital access">
+          <div class="card__icon"><i class="fa-solid fa-id-card"></i></div>
+          <h3>Membership Registration</h3>
+          <p>Free membership that unlocks the whole library.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+        <article class="card reveal d3" data-service
+          data-title="Community Reading Events"
+          data-icon="fa-solid fa-users-rectangle"
+          data-desc="Book clubs, author talks, poetry evenings and community festivals bring readers together throughout the year."
+          data-points="Monthly book club|Author meet &amp; greets|Poetry open mic nights|Seasonal reading festivals">
+          <div class="card__icon" style="background:var(--grad-brand)"><i class="fa-solid fa-users-rectangle"></i></div>
+          <h3>Community Reading Events</h3>
+          <p>Meet fellow readers at talks, clubs and festivals.</p>
+          <button class="btn btn--sm btn--ghost" type="button" data-learn>Learn More <i class="fa-solid fa-arrow-right"></i></button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works + image -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="hero__grid" style="align-items:center;gap:52px">
+        <div class="reveal reveal--left">
+          <span class="eyebrow">How It Works</span>
+          <h2>Your library card, in three easy steps</h2>
+          <div class="accordion" style="margin-top:24px">
+            <div class="acc-item open">
+              <button class="acc-head" type="button">1. Register free online <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="acc-body"><p>Create your account with your name, email and phone number. It only takes a minute.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-head" type="button">2. Get your membership card <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="acc-body"><p>Your digital card is issued instantly; collect a physical card at the front desk whenever you visit.</p></div>
+            </div>
+            <div class="acc-item">
+              <button class="acc-head" type="button">3. Start borrowing &amp; exploring <i class="fa-solid fa-chevron-down"></i></button>
+              <div class="acc-body"><p>Borrow books, access the digital library, join events and reserve study rooms right away.</p></div>
+            </div>
+          </div>
+          <a href="signup.html" class="btn" style="margin-top:22px"><i class="fa-solid fa-user-plus"></i> Register Free</a>
+        </div>
+        <div class="zoom-img reveal reveal--right">
+          <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?auto=format&fit=crop&w=900&q=70"
+               alt="Librarian helping a visitor at the Stackly service desk" style="width:100%;height:440px;object-fit:cover"
+               data-fallback="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=70">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section class="band section section--tight">
+    <div class="container">
+      <div class="stat-grid">
+        <div class="stat reveal" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-clock" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="24" data-suffix="/7">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Digital Access</div>
+        </div>
+        <div class="stat reveal d1" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-headset" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="15" data-suffix="+">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Weekly Programs</div>
+        </div>
+        <div class="stat reveal d2" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-graduation-cap" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="320" data-suffix="+">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Workshops / yr</div>
+        </div>
+        <div class="stat reveal d3" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-face-smile" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="98" data-suffix="%">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Member Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service modal -->
+  <div class="modal-overlay" id="serviceModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="svcTitle">
+      <div class="modal__head">
+        <h3 id="svcTitle">Service</h3>
+        <button class="modal__close" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal__body" id="svcBody"></div>
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-close-svc>Close</button>
+        <a href="contact.html" class="btn"><i class="fa-solid fa-circle-question"></i> Ask a Librarian</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="brand">
+            <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+          </a>
+          <p>A modern community library connecting curious minds with knowledge, culture and lifelong learning.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Stackly on X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Stackly on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="books.html">Books &amp; Collections</a></li>
+            <li><a href="services.html">Library Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Book Borrowing</a></li>
+            <li><a href="services.html">Digital Library</a></li>
+            <li><a href="services.html">Reading Rooms</a></li>
+            <li><a href="services.html">Children's Programs</a></li>
+            <li><a href="404.html">Research Assistance</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Visit Us</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>12 Reading Lane, Knowledge District, Your City</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:hello@stacklylibrary.org">hello@stacklylibrary.org</a></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 9:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Public Library. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; Vanilla JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var modal = document.getElementById("serviceModal");
+      var titleEl = document.getElementById("svcTitle");
+      var bodyEl = document.getElementById("svcBody");
+      function close() { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); }
+      document.querySelectorAll("[data-learn]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var card = btn.closest("[data-service]");
+          var icon = card.dataset.icon;
+          var points = (card.dataset.points || "").split("|").filter(Boolean);
+          titleEl.textContent = card.dataset.title;
+          bodyEl.innerHTML =
+            '<div style="width:60px;height:60px;border-radius:16px;background:var(--grad-brand);display:grid;place-items:center;color:#fff;font-size:1.4rem;margin-bottom:16px"><i class="' + icon + '"></i></div>' +
+            '<p>' + card.dataset.desc + '</p>' +
+            '<ul style="margin-top:14px;display:grid;gap:10px">' +
+            points.map(function (p) {
+              return '<li style="display:flex;gap:10px;align-items:flex-start"><i class="fa-solid fa-circle-check" style="color:var(--teal);margin-top:4px"></i><span>' + p + '</span></li>';
+            }).join("") +
+            "</ul>";
+          modal.classList.add("open");
+          modal.setAttribute("aria-hidden", "false");
+        });
+      });
+      modal.querySelectorAll(".modal__close, [data-close-svc]").forEach(function (el) {
+        el.addEventListener("click", close);
+      });
+      modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+      window.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    })();
+  </script>
+</body>
+</html>

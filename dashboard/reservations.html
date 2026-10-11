@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your book reservations at Stackly Public Library.">
+  <title>Reservations | Stackly Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body data-guard>
+<div class="dash">
+  <aside class="dash-sidebar" id="sidebar">
+    <a href="../index.html" class="brand">
+      <img class="brand__logo" src="../images/Stackly_logo.png" alt="Stackly Public Library">
+      <button class="dash-sidebar__close" type="button" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></button>
+    </a>
+    <nav class="dash-nav" aria-label="Dashboard navigation">
+      <div class="dash-nav__label">Menu</div>
+      <a href="overview.html"><i class="fa-solid fa-gauge-high"></i> Overview</a>
+      <a href="my-books.html"><i class="fa-solid fa-book"></i> My Books</a>
+      <a href="browse-books.html"><i class="fa-solid fa-magnifying-glass"></i> Browse Books</a>
+      <a href="borrowing-history.html"><i class="fa-solid fa-clock-rotate-left"></i> Borrowing History</a>
+      <a href="reservations.html" class="active"><i class="fa-solid fa-bookmark"></i> Reservations</a>
+      <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+      <a href="notifications.html"><i class="fa-solid fa-bell"></i> Notifications <span class="pill" data-notif-count>3</span></a>
+      <a href="profile-settings.html"><i class="fa-solid fa-user-gear"></i> Profile &amp; Settings</a>
+    </nav>
+    <div class="dash-sidebar__foot">
+      <button type="button" class="btn btn--light btn--sm btn--block" data-logout><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+    </div>
+  </aside>
+
+  <div class="dash-main">
+    <header class="dash-header">
+      <button class="dash-header__toggle" aria-label="Toggle sidebar"><i class="fa-solid fa-bars"></i></button>
+      <div class="dash-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search reservations…" data-global-search aria-label="Search dashboard">
+      </div>
+      <div class="dash-header__right">
+        <div class="dash-dropdown">
+          <button class="user-chip" data-dropdown>
+            <img data-user-avatar src="https://ui-avatars.com/api/?background=6c3fc5&color=fff&bold=true&size=96&name=Reader" alt="Profile avatar">
+            <div class="info"><div class="n" data-user-name>Reader</div><div class="e" data-user-email>reader@stacklylibrary.org</div></div>
+            <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:var(--muted)"></i>
+          </button>
+          <div class="dash-menu">
+            <a href="profile-settings.html"><i class="fa-solid fa-user"></i> My Profile</a>
+            <a href="reading-lists.html"><i class="fa-solid fa-list-check"></i> Reading Lists</a>
+            <a href="../index.html"><i class="fa-solid fa-globe"></i> Public Website</a>
+            <button class="mrow" data-logout style="width:100%;text-align:left"><i class="fa-solid fa-right-from-bracket"></i><span class="t" style="color:var(--ink)">Logout</span></button>
+          </div>
+        </div>
+        <button class="icon-btn" data-logout aria-label="Logout" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+      </div>
+    </header>
+
+    <main class="dash-content">
+      <div class="panel__head" style="margin-bottom:22px">
+        <div>
+          <h1 style="margin:0;font-size:1.6rem">Reservations</h1>
+          <p style="margin:0;color:var(--muted);font-size:.9rem">Track reserved titles and their expected availability.</p>
+        </div>
+        <a href="browse-books.html" class="btn btn--sm"><i class="fa-solid fa-plus"></i> Reserve a Book</a>
+      </div>
+
+      <section class="dash-cols">
+        <div class="panel reveal" data-searchable>
+          <div class="panel__head"><div><h2>Reservation Queue</h2><span class="sub">Sample data</span></div></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Book</th><th>Reserved</th><th>Position</th><th>Expected</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr data-book-title="Project Hail Mary">
+                  <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780593135204-S.jpg" alt="Project Hail Mary cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">Project Hail Mary</div><div class="s">Andy Weir</div></div></div></td>
+                  <td>05 Jun 2026</td><td>#1</td><td>Ready now</td>
+                  <td data-status><span class="status status--ready"><i class="fa-solid fa-circle-check"></i> Ready</span></td>
+                  <td data-actions><button class="btn btn--sm btn--ghost" data-cancel-reservation><i class="fa-solid fa-xmark"></i> Cancel</button></td>
+                </tr>
+                <tr data-book-title="1984">
+                  <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780451524935-S.jpg" alt="1984 cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">1984</div><div class="s">George Orwell</div></div></div></td>
+                  <td>01 Jun 2026</td><td>#3</td><td>~9 Jun 2026</td>
+                  <td data-status><span class="status status--pending"><i class="fa-solid fa-hourglass-half"></i> Pending</span></td>
+                  <td data-actions><button class="btn btn--sm btn--ghost" data-cancel-reservation><i class="fa-solid fa-xmark"></i> Cancel</button></td>
+                </tr>
+                <tr data-book-title="The Silent Patient">
+                  <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9781250301697-S.jpg" alt="The Silent Patient cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">The Silent Patient</div><div class="s">Alex Michaelides</div></div></div></td>
+                  <td>28 May 2026</td><td>#2</td><td>~12 Jun 2026</td>
+                  <td data-status><span class="status status--pending"><i class="fa-solid fa-hourglass-half"></i> Pending</span></td>
+                  <td data-actions><button class="btn btn--sm btn--ghost" data-cancel-reservation><i class="fa-solid fa-xmark"></i> Cancel</button></td>
+                </tr>
+                <tr data-book-title="The Night Circus">
+                  <td><div class="cell-book"><img src="https://covers.openlibrary.org/b/isbn/9780307744432-S.jpg" alt="The Night Circus cover" data-fallback="../assets/images/book-fallback.svg"><div><div class="t">The Night Circus</div><div class="s">Erin Morgenstern</div></div></div></td>
+                  <td>20 May 2026</td><td>#4</td><td>~20 Jun 2026</td>
+                  <td data-status><span class="status status--pending"><i class="fa-solid fa-hourglass-half"></i> Pending</span></td>
+                  <td data-actions><button class="btn btn--sm btn--ghost" data-cancel-reservation><i class="fa-solid fa-xmark"></i> Cancel</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel reveal d1" data-searchable>
+          <div class="panel__head"><div><h2>Reservation Status</h2><span class="sub">Overview</span></div></div>
+          <div class="chart-wrap chart-wrap--sm"><canvas id="statusDoughnut" aria-label="Reservation status chart" role="img"></canvas></div>
+          <div style="margin-top:18px;font-size:.84rem;color:var(--muted)">
+            <p style="margin:0 0 6px"><i class="fa-solid fa-circle-info"></i> You are <strong>#1</strong> in the queue for "Project Hail Mary".</p>
+            <p style="margin:0"><i class="fa-solid fa-bell" style="color:var(--purple)"></i> We'll notify you when a reservation becomes ready.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="panel reveal" style="background:var(--cream);border-color:#f0c9a0" data-searchable>
+        <p style="margin:0;color:#9a6320;font-size:.86rem"><i class="fa-solid fa-circle-info"></i> <strong>Demo note:</strong> Reservation positions and availability are illustrative sample data, not a live library system.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Stackly Public Library — our mission, vision, values, history, team and reading spaces.">
+  <title>About Us | Stackly Public Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="books.html">Books &amp; Collections</a>
+        <a href="services.html">Library Services</a>
+        <a href="contact.html">Contact Us</a>
+        <div class="nav-actions nav-actions--mobile">
+          <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <div class="nav-actions nav-actions--desktop">
+        <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="hero" style="padding:64px 0 74px">
+    <span class="blob blob--1"></span>
+    <div class="container">
+      <div class="section-head" style="margin-bottom:0;max-width:760px">
+        <span class="eyebrow">About Us</span>
+        <h1>More than books — a home for curious minds</h1>
+        <p>Since our founding, Stackly Public Library has been a beacon of learning, culture and community connection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section">
+    <div class="container">
+      <div class="hero__grid" style="gap:50px;align-items:center">
+        <div class="zoom-img reveal reveal--left">
+          <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=70"
+               alt="Rows of bookshelves inside the Stackly Public Library" style="width:100%;height:420px;object-fit:cover"
+               data-fallback="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=70">
+        </div>
+        <div class="reveal reveal--right">
+          <span class="eyebrow">Our Mission</span>
+          <h2>Empowering everyone through access to knowledge</h2>
+          <p>Stackly Public Library exists to make knowledge accessible, inclusive and joyful. We bring people and ideas together by curating diverse collections, nurturing literacy at every age and creating welcoming spaces where the whole community can learn, create and connect.</p>
+          <p>From toddlers discovering their first picture book to researchers uncovering new insights, we serve every stage of the lifelong learning journey.</p>
+          <a href="services.html" class="btn" style="margin-top:8px">Explore Our Services <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & values -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Vision &amp; Values</span>
+        <h2>What we stand for</h2>
+        <p>Our values shape every program, partnership and interaction.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card reveal">
+          <div class="card__icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>Our Vision</h3>
+          <p>A community where every person has the confidence and curiosity to keep learning for life.</p>
+        </div>
+        <div class="card reveal d1">
+          <div class="card__icon" style="background:var(--grad-cool)"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <h3>Inclusion</h3>
+          <p>Free, welcoming access for all — regardless of age, background or ability.</p>
+        </div>
+        <div class="card reveal d2">
+          <div class="card__icon" style="background:var(--grad-warm)"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Curiosity</h3>
+          <p>We champion questions, exploration and the joy of discovering something new.</p>
+        </div>
+        <div class="card reveal">
+          <div class="card__icon" style="background:linear-gradient(135deg,#2b6cb0,#5b9bd5)"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Community</h3>
+          <p>We build connections through shared reading, events and local partnerships.</p>
+        </div>
+        <div class="card reveal d1">
+          <div class="card__icon" style="background:linear-gradient(135deg,#e94f9b,#f5822b)"><i class="fa-solid fa-shield-heart"></i></div>
+          <h3>Integrity</h3>
+          <p>We steward public trust with transparency, care and responsible stewardship.</p>
+        </div>
+        <div class="card reveal d2">
+          <div class="card__icon" style="background:linear-gradient(135deg,#0a8c80,#0fb5a5)"><i class="fa-solid fa-seedling"></i></div>
+          <h3>Growth</h3>
+          <p>We embrace change and use modern tools to keep knowledge within everyone's reach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Journey</span>
+        <h2>Library history &amp; achievements</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card reveal">
+          <div class="card__icon"><i class="fa-solid fa-door-open"></i></div>
+          <h3>1998</h3>
+          <p>Stackly opens its doors with a modest collection of 4,000 books and a big dream.</p>
+        </div>
+        <div class="card reveal d1">
+          <div class="card__icon" style="background:var(--grad-cool)"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+          <h3>2009</h3>
+          <p>Expanded to a new building with dedicated children's and study wings.</p>
+        </div>
+        <div class="card reveal d2">
+          <div class="card__icon" style="background:var(--grad-warm)"><i class="fa-solid fa-wifi"></i></div>
+          <h3>2017</h3>
+          <p>Launched the digital library, bringing e-books and databases online.</p>
+        </div>
+        <div class="card reveal d3">
+          <div class="card__icon" style="background:linear-gradient(135deg,#2b6cb0,#5b9bd5)"><i class="fa-solid fa-trophy"></i></div>
+          <h3>2024</h3>
+          <p>Recognised as a "Community Library of the Year" for our reading outreach programmes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our People</span>
+        <h2>Meet the librarians &amp; team</h2>
+        <p>Friendly experts ready to help you find your next great read.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card reveal text-center">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=70"
+               alt="Portrait of Head Librarian Eleanor Whitfield" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 16px"
+               data-fallback="https://ui-avatars.com/api/?name=Eleanor+Whitfield&background=6c3fc5&color=fff&size=200&bold=true">
+          <h3>Eleanor Whitfield</h3>
+          <p style="color:var(--purple);font-weight:600;font-size:.85rem;margin-bottom:4px">Head Librarian</p>
+          <p>20 years guiding readers and shaping our collection strategy.</p>
+        </div>
+        <div class="card reveal d1 text-center">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=70"
+               alt="Portrait of Digital Resources Lead Marcus Bennett" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 16px"
+               data-fallback="https://ui-avatars.com/api/?name=Marcus+Bennett&background=2b6cb0&color=fff&size=200&bold=true">
+          <h3>Marcus Bennett</h3>
+          <p style="color:var(--purple);font-weight:600;font-size:.85rem;margin-bottom:4px">Digital Resources Lead</p>
+          <p>Keeps our e-library and research databases running smoothly.</p>
+        </div>
+        <div class="card reveal d2 text-center">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=70"
+               alt="Portrait of Children's Program Coordinator Sofia Marino" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 16px"
+               data-fallback="https://ui-avatars.com/api/?name=Sofia+Marino&background=0fb5a5&color=fff&size=200&bold=true">
+          <h3>Sofia Marino</h3>
+          <p style="color:var(--purple);font-weight:600;font-size:.85rem;margin-bottom:4px">Children's Coordinator</p>
+          <p>Designs story hours, reading clubs and family programmes.</p>
+        </div>
+        <div class="card reveal d3 text-center">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=70"
+               alt="Portrait of Community Outreach Officer James Okoro" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 16px"
+               data-fallback="https://ui-avatars.com/api/?name=James+Okoro&background=f5822b&color=fff&size=200&bold=true">
+          <h3>James Okoro</h3>
+          <p style="color:var(--purple);font-weight:600;font-size:.85rem;margin-bottom:4px">Community Outreach</p>
+          <p>Connects the library with schools, partners and neighbours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Spaces</span>
+        <h2>Reading spaces &amp; facilities</h2>
+        <p>Comfortable, accessible and thoughtfully designed for how you like to read.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card reveal" style="padding:0;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=70" alt="Sunlit reading room with comfortable seats" style="width:100%;height:260px;object-fit:cover" data-fallback="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=70">
+          <div style="padding:24px">
+            <h3>Silent Reading Rooms</h3>
+            <p>Quiet, light-filled spaces with ergonomic seating for focused study and reflection.</p>
+          </div>
+        </div>
+        <div class="card reveal d1" style="padding:0;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=70" alt="Group study area with students collaborating" style="width:100%;height:260px;object-fit:cover" data-fallback="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=70">
+          <div style="padding:24px">
+            <h3>Collaboration Zones</h3>
+            <p>Bookable tables and whiteboards for group projects, study circles and workshops.</p>
+          </div>
+        </div>
+        <div class="card reveal" style="padding:0;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=70" alt="Child-friendly reading corner with colourful rugs" style="width:100%;height:260px;object-fit:cover" data-fallback="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=70">
+          <div style="padding:24px">
+            <h3>Children's Discovery Wing</h3>
+            <p>A playful, safe area with picture books, story cushions and activity tables.</p>
+          </div>
+        </div>
+        <div class="card reveal d1" style="padding:0;overflow:hidden">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=70" alt="Digital access area with computers and tablets" style="width:100%;height:260px;object-fit:cover" data-fallback="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=70">
+          <div style="padding:24px">
+            <h3>Digital Access Lab</h3>
+            <p>Free computers, fast Wi-Fi, printing and assistance with our online resources.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA stats -->
+  <section class="band section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">By The Numbers</span>
+        <h2>Growing with our community</h2>
+      </div>
+      <div class="stat-grid" style="margin-bottom:38px">
+        <div class="stat reveal" style="background:rgba(255,255,255,.12);border:none;color:#fff">
+          <i class="fa-solid fa-book" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="48250" data-suffix="+">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Books</div>
+        </div>
+        <div class="stat reveal d1" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-users" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="12700" data-suffix="+">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Members</div>
+        </div>
+        <div class="stat reveal d2" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-calendar-star" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="860" data-suffix="+">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Events</div>
+        </div>
+        <div class="stat reveal d3" style="background:rgba(255,255,255,.12);border:none">
+          <i class="fa-solid fa-clock" style="color:#fff"></i>
+          <div class="num" style="color:#fff" data-count="26" data-suffix=" yrs">0</div>
+          <div class="lbl" style="color:rgba(255,255,255,.8)">Serving readers</div>
+        </div>
+      </div>
+      <div class="text-center reveal">
+        <a href="signup.html" class="btn btn--warm"><i class="fa-solid fa-id-card"></i> Become a Member</a>
+        <a href="contact.html" class="btn btn--light" style="margin-left:10px"><i class="fa-solid fa-location-dot"></i> Plan a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="brand">
+            <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+          </a>
+          <p>A modern community library connecting curious minds with knowledge, culture and lifelong learning.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Stackly on X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Stackly on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="books.html">Books &amp; Collections</a></li>
+            <li><a href="services.html">Library Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Book Borrowing</a></li>
+            <li><a href="services.html">Digital Library</a></li>
+            <li><a href="services.html">Reading Rooms</a></li>
+            <li><a href="services.html">Children's Programs</a></li>
+            <li><a href="404.html">Research Assistance</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Visit Us</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>12 Reading Lane, Knowledge District, Your City</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:hello@stacklylibrary.org">hello@stacklylibrary.org</a></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 9:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Public Library. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; Vanilla JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse, search and filter the Stackly Public Library collection of books and digital resources.">
+  <title>Books &amp; Collections | Stackly Public Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand">
+        <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="books.html">Books &amp; Collections</a>
+        <a href="services.html">Library Services</a>
+        <a href="contact.html">Contact Us</a>
+        <div class="nav-actions nav-actions--mobile">
+          <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+          <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+        </div>
+      </nav>
+      <div class="nav-actions nav-actions--desktop">
+        <a href="login.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        <a href="signup.html" class="btn btn--sm"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="hero" style="padding:60px 0 50px">
+    <span class="blob blob--1"></span>
+    <div class="container">
+      <div class="section-head" style="margin-bottom:0;max-width:760px">
+        <span class="eyebrow">Books &amp; Collections</span>
+        <h1>Explore our shelves</h1>
+        <p>Search by title or author, filter by category and availability, then sort to find your perfect next read.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+
+      <!-- Toolbar -->
+      <div class="toolbar reveal">
+        <div class="form-group toolbar__search">
+          <label for="bookSearch">Search books</label>
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="bookSearch" class="form-control" type="search" placeholder="Search by title or author...">
+        </div>
+        <div class="form-group">
+          <label for="catFilter">Category</label>
+          <select id="catFilter" class="form-control">
+            <option value="all">All categories</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="availFilter">Availability</label>
+          <select id="availFilter" class="form-control">
+            <option value="all">All books</option>
+            <option value="available">Available now</option>
+            <option value="out">Checked out</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sortSelect">Sort by</label>
+          <select id="sortSelect" class="form-control">
+            <option value="default">Featured</option>
+            <option value="title-asc">Title (A–Z)</option>
+            <option value="title-desc">Title (Z–A)</option>
+            <option value="year-new">Newest first</option>
+            <option value="year-old">Oldest first</option>
+            <option value="rating">Highest rated</option>
+          </select>
+        </div>
+        <div class="form-group" style="flex:0">
+          <label>&nbsp;</label>
+          <button id="resetFilters" class="btn btn--ghost btn--sm" type="button"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:22px">
+        <p id="resultCount" style="margin:0;font-weight:600;color:var(--ink)">Loading books…</p>
+        <p style="margin:0;font-size:.84rem;color:var(--muted)"><i class="fa-solid fa-circle-info"></i> Click <strong>Details</strong> to view a full record.</p>
+      </div>
+
+      <div class="grid grid-4" id="bookGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </section>
+
+  <!-- Info band -->
+  <section class="band section section--tight">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="card reveal" style="background:rgba(255,255,255,.12);border:none;color:#fff">
+          <div class="card__icon" style="background:rgba(255,255,255,.2)"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3 style="color:#fff">Smart Search</h3>
+          <p style="color:rgba(255,255,255,.85)">Find any title or author instantly across the whole catalogue.</p>
+        </div>
+        <div class="card reveal d1" style="background:rgba(255,255,255,.12);border:none;color:#fff">
+          <div class="card__icon" style="background:rgba(255,255,255,.2)"><i class="fa-solid fa-tags"></i></div>
+          <h3 style="color:#fff">Curated Categories</h3>
+          <p style="color:rgba(255,255,255,.85)">Dozens of collections, organised and easy to browse.</p>
+        </div>
+        <div class="card reveal d2" style="background:rgba(255,255,255,.12);border:none;color:#fff">
+          <div class="card__icon" style="background:rgba(255,255,255,.2)"><i class="fa-solid fa-book-open-reader"></i></div>
+          <h3 style="color:#fff">Easy Borrowing</h3>
+          <p style="color:rgba(255,255,255,.85)">Request any available title in a couple of clicks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="index.html" class="brand">
+            <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+          </a>
+          <p>A modern community library connecting curious minds with knowledge, culture and lifelong learning.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Stackly on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Stackly on X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Stackly on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Stackly on YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="books.html">Books &amp; Collections</a></li>
+            <li><a href="services.html">Library Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Book Borrowing</a></li>
+            <li><a href="services.html">Digital Library</a></li>
+            <li><a href="services.html">Reading Rooms</a></li>
+            <li><a href="services.html">Children's Programs</a></li>
+            <li><a href="404.html">Research Assistance</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Visit Us</h4>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i><span>12 Reading Lane, Knowledge District, Your City</span></li>
+            <li><i class="fa-solid fa-phone"></i><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:hello@stacklylibrary.org">hello@stacklylibrary.org</a></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon–Sat: 9:00 AM – 9:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Public Library. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; Vanilla JavaScript.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/books.js"></script>
+</body>
+</html>

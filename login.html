@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to your Stackly Public Library account to borrow books, manage reservations and explore the digital library.">
+  <title>Login | Stackly Public Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <div class="auth">
+    <!-- Left visual -->
+    <aside class="auth__visual">
+      <img class="auth__bg" src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=1200&q=70"
+           alt="Reader enjoying a book in a bright modern library"
+           data-fallback="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=70">
+      <span class="auth__blob auth__blob--1"></span>
+      <span class="auth__blob auth__blob--2"></span>
+
+      <a href="index.html" class="brand">
+        <img class="brand__logo" src="images/Stackly_logo.png" alt="Stackly Public Library">
+      </a>
+
+      <div class="auth__visual-body">
+        <h2>Welcome back to your reading journey</h2>
+        <p>Sign in to borrow books, track your reading, manage reservations and access thousands of digital resources.</p>
+        <ul class="auth__features">
+          <li><i class="fa-solid fa-book-open"></i> Borrow and renew in seconds</li>
+          <li><i class="fa-solid fa-headphones"></i> E-books &amp; audiobooks on any device</li>
+          <li><i class="fa-solid fa-calendar-check"></i> Reserve books and study rooms</li>
+        </ul>
+      </div>
+
+      <p class="auth__visual-foot">© <span data-year>2026</span> Public Library</p>
+    </aside>
+
+    <!-- Right form -->
+    <main class="auth__form-side">
+      <div class="auth__topbar">
+        <a href="index.html" class="btn btn--ghost btn--sm"><i class="fa-solid fa-house"></i> Back to Home</a>
+      </div>
+
+      <form class="auth__form" id="loginForm" autocomplete="off" novalidate>
+        <h1>Login</h1>
+        <p class="sub">Access your Stackly account</p>
+
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <div class="input-icon">
+            <i class="fa-solid fa-envelope prefix"></i>
+            <input id="loginEmail" class="form-control" type="email" placeholder="you@example.com" autocomplete="off" required>
+          </div>
+          <div class="form-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="input-icon">
+            <i class="fa-solid fa-lock prefix"></i>
+            <input id="loginPassword" class="form-control" type="password" placeholder="Enter your password" autocomplete="off" required>
+            <button type="button" class="toggle-pass" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+          </div>
+          <div class="form-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="loginRole">Choose Role</label>
+          <select id="loginRole" class="form-control" required>
+            <option value="">Select your role…</option>
+            <option value="member">Member</option>
+            <option value="librarian">Librarian</option>
+            <option value="administrator">Administrator</option>
+          </select>
+          <div class="form-error"></div>
+        </div>
+
+        <div class="check-row">
+          <label class="check"><input type="checkbox" id="rememberMe"> Remember Me</label>
+          <a href="404.html" style="color:var(--purple);font-weight:600;font-size:.86rem">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn--block"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+
+        <div class="auth-divider"><span>OR</span></div>
+        <button type="button" class="btn btn-google btn--block" onclick="window.location.href='404.html';">
+          <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M21.35 12.23c0-.79-.07-1.55-.22-2.27H12v4.3h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.42Z"/>
+            <path fill="#34A853" d="M12 21.75c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.3v2.53A9.75 9.75 0 0 0 12 21.75Z"/>
+            <path fill="#FBBC05" d="M6.54 13.83A5.86 5.86 0 0 1 6.23 12c0-.64.11-1.26.31-1.83V7.64H3.3A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.36l3.24-2.53Z"/>
+            <path fill="#EA4335" d="M12 6.14c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.25 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.7 5.39l3.24 2.53c.77-2.31 2.92-4.03 5.46-4.03Z"/>
+          </svg>
+          Continue with Google
+        </button>
+
+        <p class="auth__switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+        <div class="demo-note">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span><strong>Demo login:</strong> This is a front-end only demo. Any valid email, a 6+ character password and a selected role will sign you in. No real authentication occurs and nothing is sent to a server.</span>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -74,6 +74,8 @@
   function setError(input, msg) {
     if (!input) return;
     input.classList.add("is-invalid");
+    const customTrigger = input.closest(".custom-select")?.querySelector(".custom-select__trigger");
+    if (customTrigger) customTrigger.classList.add("is-invalid");
     const group = input.closest(".form-group");
     let err = group ? group.querySelector(".form-error") : null;
     if (!err && group) {
@@ -86,10 +88,19 @@
   function clearError(input) {
     if (!input) return;
     input.classList.remove("is-invalid");
+    const customTrigger = input.closest(".custom-select")?.querySelector(".custom-select__trigger");
+    if (customTrigger) customTrigger.classList.remove("is-invalid");
     const group = input.closest(".form-group");
     const err = group ? group.querySelector(".form-error") : null;
     if (err) err.textContent = "";
   }
+
+  // Clear role validation as soon as a custom dropdown selection is made.
+  document.querySelectorAll("select.form-control").forEach((select) => {
+    if (select.id === "loginRole" || select.id === "signupRole") {
+      select.addEventListener("change", () => clearError(select));
+    }
+  });
 
   /* Password visibility toggles (works for every .toggle-pass) */
   document.querySelectorAll(".toggle-pass").forEach((btn) => {

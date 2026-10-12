@@ -6,11 +6,13 @@
 (function () {
   "use strict";
 
-  const FALLBACK_COVER =
-    "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=70";
+  const FALLBACK_COVER = location.pathname.includes("/dashboard/")
+    ? "../assets/images/book-fallback.svg"
+    : "assets/images/book-fallback.svg";
 
   /* Copyright-safe real book covers via Open Library (ISBN based). */
-  const cover = (isbn) => "https://covers.openlibrary.org/b/isbn/" + isbn + "-L.jpg";
+  const cover = (isbn, size) =>
+    "https://covers.openlibrary.org/b/isbn/" + isbn + "-" + (size || "S") + ".jpg";
 
   /* Covers are injected after main.js runs, so bind the fallback handler
      whenever a book grid or modal is rendered. */
@@ -67,8 +69,8 @@
       '<article class="book-card reveal">' +
       '<div class="book-card__cover">' +
       '<span class="book-card__tag">' + b.category + "</span>" +
-      '<img src="' + cover(b.isbn) + '" alt="Cover of ' + b.title + ' by ' + b.author + '" ' +
-      'loading="lazy" data-fallback="' + FALLBACK_COVER + '">' +
+      '<img src="' + cover(b.isbn, "S") + '" alt="Cover of ' + b.title + ' by ' + b.author + '" ' +
+      'loading="lazy" decoding="async" data-fallback="' + FALLBACK_COVER + '">' +
       "</div>" +
       '<div class="book-card__body">' +
       '<h3 class="book-card__title">' + b.title + "</h3>" +
@@ -115,7 +117,7 @@
     }
     modal.querySelector("#bookModalBody").innerHTML =
       '<div class="detail-grid">' +
-      '<img src="' + cover(b.isbn) + '" alt="Cover of ' + b.title + '" data-fallback="' + FALLBACK_COVER + '">' +
+      '<img src="' + cover(b.isbn, "M") + '" alt="Cover of ' + b.title + '" decoding="async" data-fallback="' + FALLBACK_COVER + '">' +
       "<div>" +
       "<h3 style='margin-bottom:4px'>" + b.title + "</h3>" +
       '<p style="color:var(--muted);margin-bottom:14px">by ' + b.author + "</p>" +

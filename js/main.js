@@ -165,6 +165,15 @@
     });
   });
 
+  /* ---------------- Image loading performance ---------------- */
+  // Keep brand/hero artwork immediate, but defer images below the fold.
+  document.querySelectorAll("img").forEach((img) => {
+    img.decoding = "async";
+    const isPriority = img.classList.contains("brand__logo") ||
+      img.classList.contains("auth__bg") || img.closest(".hero__media");
+    if (!isPriority && !img.hasAttribute("loading")) img.loading = "lazy";
+  });
+
   /* ---------------- Viewport-safe custom form dropdowns ---------------- */
   function initCustomSelects() {
     const selects = document.querySelectorAll("select.form-control:not([data-custom-select])");
@@ -194,6 +203,8 @@
       const menu = document.createElement("div");
       menu.className = "custom-select__menu";
       menu.setAttribute("role", "listbox");
+      menu.id = "custom-select-menu-" + Math.random().toString(36).slice(2);
+      trigger.setAttribute("aria-controls", menu.id);
       menu.hidden = true;
       document.body.appendChild(menu);
 
@@ -237,7 +248,18 @@
         trigger.setAttribute("aria-expanded", "true");
       };
 
-      trigger.addEventListener("click", () => menu.classList.contains("open") ? closeAll() : open());
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        menu.classList.contains("open") ? closeAll() : open();
+      });
+      trigger.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeAll();
+        if ((event.key === "Enter" || event.key === " ") && !menu.classList.contains("open")) {
+          event.preventDefault();
+          open();
+        }
+      });
+      menu.addEventListener("click", (event) => event.stopPropagation());
       select.addEventListener("change", sync);
       new MutationObserver(sync).observe(select, { childList: true });
       sync();

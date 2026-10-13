@@ -206,7 +206,9 @@
       menu.id = "custom-select-menu-" + Math.random().toString(36).slice(2);
       trigger.setAttribute("aria-controls", menu.id);
       menu.hidden = true;
-      document.body.appendChild(menu);
+      // Keep the menu inside its select wrapper so it remains anchored to the
+      // field even when the page is scrolled or browser zoom is changed.
+      wrapper.appendChild(menu);
 
       const sync = () => {
         const selected = select.options[select.selectedIndex];
@@ -233,18 +235,15 @@
       const open = () => {
         closeAll();
         const rect = trigger.getBoundingClientRect();
-        const gap = 6;
-        const maxHeight = Math.min(320, window.innerHeight - 24);
-        const spaceBelow = window.innerHeight - rect.bottom - gap;
-        const openAbove = spaceBelow < Math.min(220, maxHeight) && rect.top > spaceBelow;
-        menu.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - rect.width - 8)) + "px";
-        menu.style.width = rect.width + "px";
-        menu.style.maxHeight = maxHeight + "px";
-        menu.style.top = openAbove
-          ? Math.max(8, rect.top - maxHeight - gap) + "px"
-          : Math.min(rect.bottom + gap, window.innerHeight - maxHeight - 8) + "px";
-        menu.classList.add("open");
+        const menuHeight = Math.min(menu.scrollHeight || 320, 320);
+        const spaceBelow = window.innerHeight - rect.bottom;
+        const spaceAbove = rect.top;
+        const openAbove = spaceBelow < menuHeight && spaceAbove > spaceBelow;
+
+        wrapper.classList.toggle("open-above", openAbove);
         menu.hidden = false;
+        menu.classList.add("open");
+        menu.style.maxHeight = Math.max(120, Math.min(320, openAbove ? spaceAbove - 8 : spaceBelow - 8)) + "px";
         trigger.setAttribute("aria-expanded", "true");
       };
 

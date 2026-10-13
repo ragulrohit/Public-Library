@@ -714,15 +714,16 @@ select.form-control {
   margin-bottom: 34px;
 }
 .toolbar .form-group { margin-bottom: 0; flex: 1 1 190px; }
-.toolbar__search { position: relative; flex: 2 1 260px; }
-.toolbar__search i {
+.toolbar__search { flex: 2 1 260px; }
+.toolbar__search-field { position: relative; }
+.toolbar__search-field i {
   position: absolute;
   left: 16px; top: 50%;
   transform: translateY(-50%);
   color: var(--muted);
   pointer-events: none;
 }
-.toolbar__search .form-control { padding-left: 42px; }
+.toolbar__search-field .form-control { padding-left: 42px; }
 
 /* Footer */
 .footer {
